@@ -28,6 +28,9 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 
+//components
+import Account from './options/Account'
+
 const drawerWidth = 240;
 
 const arrayRole = ['Dasboeast', 'Accounts', 'Products', 'Discounts', 'Categorys', 'Orders'];
@@ -42,8 +45,9 @@ const openedMixin = (theme) => ({
 });
 
 const useStyles = makeStyles({
-    header: {
-        backgroundColor: 'black',
+    nav: {
+        background: '#4042b8',
+        color: '#ffffff'
 
     },
 });
@@ -147,9 +151,12 @@ export default function Home() {
         setAnchorEl(null);
     };
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', background: '#f2f2f2'}}>
                 <CssBaseline />
-            <AppBar position="fixed" open={open}  >
+            <AppBar position="fixed" open={open} style={{
+                background: '#6164e8',
+                color: '#ffffff'
+ }} >
                     <Toolbar>
                         <IconButton
                             color="inherit"
@@ -200,25 +207,25 @@ export default function Home() {
                         )}
                     </Toolbar>
                 </AppBar>
-                <Drawer variant="permanent" open={open}>
-                    <DrawerHeader>
+                <Drawer variant="permanent" open={open}  >
+                <DrawerHeader>
                         <IconButton onClick={handleDrawerClose}>
                             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                         </IconButton>
                     </DrawerHeader>
                     <Divider />
 
-                    <List >
+                <List >
                         <ListItem button key="0"  >
                             <ListItemIcon>
                                 <MailIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Dashboard" />
+                            <ListItemText primary="Quản Lý Tài Khoản" />
                         </ListItem>
                         <Divider />
                     </List>
 
-                    <List>
+                <List >
                         <ListItem button key="1"  >
                             <ListItemIcon>
                                 <AccountBoxIcon />
@@ -227,47 +234,49 @@ export default function Home() {
                         </ListItem>
                         <Divider />
                     </List>
-                    <List>
+                <List >
                         <ListItem button key="2"  >
                             <ListItemIcon>
                                 <BookIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Products" />
+                            <ListItemText primary="Bum" />
                         </ListItem>
                         <Divider />
                     </List>
-                    <List>
+                <List >
                         <ListItem button key="3" >
                             <ListItemIcon>
                                 <LocalOfferIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Discounts" />
+                            <ListItemText primary="Bảh" />
                         </ListItem>
                         <Divider />
                     </List>
-                    <List>
+                <List >
                         <ListItem button key="4"  >
                             <ListItemIcon>
                                 <ClassIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Categorys" />
+                            <ListItemText primary="Bems" />
                         </ListItem>
                         <Divider />
                     </List>
-                    <List>
+                <List >
                         <ListItem button key="5" >
                             <ListItemIcon>
                                 <ShoppingBasketIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Orders" />
+                            <ListItemText primary="Drk" />
                         </ListItem>
                         <Divider />
                     </List>
-
-
                 </Drawer>
-            
-         
+           
+
+                <Account />
+
+                   
+ 
         </Box>
     )
 }

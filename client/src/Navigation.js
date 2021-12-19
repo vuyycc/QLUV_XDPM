@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 
 import Home from './components/Home'
+import SignIn from './components/SignIn'
+import SignUp from './components/SignUp';
 
 export default function Navigation() {
 
@@ -17,6 +19,12 @@ export default function Navigation() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                 </Routes>
+            <Routes>
+                <Route path="/signin" element={<SignIn />} />
+            </Routes>
+            <Routes>
+                <Route path="/signup" element={<SignUp />} />
+            </Routes>
             </Router>
     )
 }
